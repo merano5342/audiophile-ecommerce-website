@@ -30,6 +30,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'import/no-unresolved': [2, { ignore: ['\\.img$', '\\.svg$'] }],
     'import/no-import-module-exports': 0,
     'import/prefer-default-export': 0,
     'no-console': 0,

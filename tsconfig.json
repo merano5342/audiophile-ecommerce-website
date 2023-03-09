@@ -22,6 +22,7 @@
     "baseUrl": "./"
   },
   "include": [
-    "src"
-, "src/css/components"  ]
+    "src",
+    "./src/declaration.d.ts"
+  ]
 }

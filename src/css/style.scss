@@ -17,15 +17,29 @@
   h3,
   h4,
   h5,
-  h6 {
+  h6,
+  p {
     font-family: 'Manrope', sans-serif;
+    text-align: center;
+  }
+
+  .rwd-width {
+    @apply md:max-w-[689px] lg:max-w-[1110px];
   }
 
   .nav {
-    display: flex;
-    justify-content: space-between;
-    height: 30px;
-    margin: 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: theme('colors.black');
+
+    .inner {
+      display: flex;
+      justify-content: space-between;
+      // height: 30px;
+      border-bottom: 1px solid theme('colors.white50');
+    }
 
     .logoIcon {
       cursor: pointer;
@@ -34,8 +48,8 @@
     .navItemsOpen {
       position: fixed;
       top: 60px;
-      right: 60px;
-      background-color: var(--white);
+      left: 60px;
+      // background-color: var(--white);
       border-radius: 10px;
 
       &[data-active=false] {
@@ -45,18 +59,107 @@
 
       .navItem {
         padding: 20px;
-        border-bottom: 1px solid var(--very-light-gray);
         width: 120px;
-
-        &:last-child {
-          border-bottom: none;
-        }
-
+        background-color: theme('colors.black');
       }
     }
 
     .navItemsClosed {
       cursor: pointer;
+    }
+  }
+
+  .product {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .product-gray {
+      position: relative;
+      width: 100%;
+      height: 165px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+
+      margin-top: 20px;
+      padding: 22px;
+
+      background-color: theme('colors.gray');
+      border-radius: 8px;
+
+
+
+    }
+
+    .image-category {
+      z-index: 10;
+      position: absolute;
+      width: 120px;
+    }
+  }
+
+
+  .btn-3 {
+    letter-spacing: 1px;
+    @apply flex items-center gap-2;
+
+    &::after {
+      content: url('../assets/shared/desktop/icon-arrow-right.svg');
+    }
+  }
+
+  .banner {
+    border-radius: 8px;
+    padding: 40px 24px;
+
+  }
+
+  .banner-1 {
+    padding: 55px 24px;
+    background-image: url('../assets/home/desktop/pattern-circles.svg');
+    background-position: center -155px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (min-width: theme('screens.md.min')) {
+      background-position: center 400%;
+    }
+
+    @media (min-width: theme('screens.lg.min')) {
+      background-position: -260px -500px;
+    }
+  }
+
+  .banner-2 {
+    background-image: url('../assets/home/mobile/image-speaker-zx7.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (min-width: theme('screens.md.min')) {
+      background-image: url('../assets/home/tablet/image-speaker-zx7.jpg');
+    }
+
+    @media (min-width: theme('screens.lg.min')) {
+      background-image: url('../assets/home/desktop/image-speaker-zx7.jpg');
+    }
+  }
+
+
+
+  // footer
+  .social-icon {
+    &:hover {
+      cursor: pointer;
+
+      path {
+        fill: theme('colors.primary');
+      }
     }
   }
 }

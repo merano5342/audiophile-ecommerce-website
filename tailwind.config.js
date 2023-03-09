@@ -7,6 +7,12 @@ const plugin = require('tailwindcss/plugin');
 module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
+    fontSize: {
+      sm: '1rem',     // 小螢幕字體大小
+      md: '1.75rem',   // 中螢幕字體大小
+      lg: '2.25rem',     // 大螢幕字體大小
+      xl: '3.5rem',   // 超大螢幕字體大小
+    },
     fontWeight: {
       regular: 400,
       medium: 500,
@@ -15,6 +21,8 @@ module.exports = {
     colors: {
       black: '#090C02',
       white: '#ffffff',
+      white50: 'rgba(255,255,255,0.5 )',
+      black50: 'rgba(0,0,0,0.5 )',
 
 
       primary: '#D87D4A',
@@ -34,9 +42,10 @@ module.exports = {
       light: '#FAFAFA',
     },
     screens: {
-      mobile: { max: '375px' },
+      sm: { max: '678px' },
       // => @media (min-width: 375px) { ... }
-      desktop: { max: '1440px' },
+      md: { min: '678px' },
+      lg: { min: '1440px' },
     },
   },
   variants: {
@@ -59,7 +68,7 @@ module.exports = {
         h1: {
           fontSize: '56px',
           lineHeight: '58px',
-          letterSpace: '2px',
+          letterSpacing: '2px',
           fontWeight: theme('fontWeight.bold'),
           color: theme('colors.black'),
           textTransform: 'uppercase',
@@ -67,7 +76,7 @@ module.exports = {
         h2: {
           fontSize: '40px',
           lineHeight: '44px',
-          letterSpace: '1.5px',
+          letterSpacing: '1.5px',
           fontWeight: theme('fontWeight.bold'),
           color: theme('colors.black'),
           textTransform: 'uppercase',
@@ -76,7 +85,7 @@ module.exports = {
         h3: {
           fontSize: '32px',
           lineHeight: '36px',
-          letterSpace: '1.15px',
+          letterSpacing: '1.15px',
           fontWeight: theme('fontWeight.bold'),
           color: theme('colors.black'),
           textTransform: 'uppercase',
@@ -84,7 +93,7 @@ module.exports = {
         h4: {
           fontSize: '28px',
           lineHeight: '38px',
-          letterSpace: '2px',
+          letterSpacing: '2px',
           fontWeight: theme('fontWeight.bold'),
           color: theme('colors.black'),
           textTransform: 'uppercase',
@@ -92,7 +101,7 @@ module.exports = {
         h5: {
           fontSize: '24px',
           lineHeight: '33px',
-          letterSpace: '1.7px',
+          letterSpacing: '1.7px',
           fontWeight: theme('fontWeight.bold'),
           color: theme('colors.black'),
           textTransform: 'uppercase',
@@ -100,7 +109,7 @@ module.exports = {
         h6: {
           fontSize: '18px',
           lineHeight: '24px',
-          letterSpace: '1.3px',
+          letterSpacing: '1.3px',
           fontWeight: theme('fontWeight.bold'),
           color: theme('colors.black'),
           textTransform: 'uppercase',
@@ -109,21 +118,37 @@ module.exports = {
           fontSize: '15px',
           lineHeight: '25px',
           color: theme('colors.black'),
-          fontWeight: theme('fontWeight.medium'),
+          fontWeight: theme('fontWeight.regular'),
         },
         a: {
           fontSize: '12px',
-          color: theme('colors.primary'),
-          fontWeight: theme('fontWeight.regular'),
+          color: theme('colors.white'),
+          textTransform: 'uppercase',
+          letterSpacing: '2px',
+          fontWeight: theme('fontWeight.media'),
           '&:hover': {
-            color: theme('colors.primaryVar'),
-          },
-          '&:visited': {
-            color: theme('colors.primaryVar'),
+            color: theme('colors.primary'),
           },
         },
       }),
         addComponents({
+          '.overline2': {
+            fontSize: '14px',
+            lineHeight: '19px',
+            letterSpacing: '10px',
+            fontWeight: theme('fontWeight.regular'),
+            color: theme('colors.white'),
+            opacity: '50%',
+            textTransform: 'uppercase',
+          },
+          '.sub-title': {
+            fontSize: '13px',
+            lineHeight: '25px',
+            letterSpacing: '1px',
+            fontWeight: theme('fontWeight.bold'),
+            color: theme('colors.primary'),
+            textTransform: 'uppercase',
+          },
           '.btn': {
             fontSize: '13px',
             fontWeight: theme('fontWeight.bold'),
@@ -131,6 +156,8 @@ module.exports = {
             borderRadius: '0',
             backgroundColor: theme('colors.primary'),
             color: theme('colors.white'),
+            textTransform: 'uppercase',
+
             '&:hover': {
               cursor: 'pointer',
               backgroundColor: theme('colors.primaryVar'),
@@ -141,13 +168,28 @@ module.exports = {
             fontWeight: theme('fontWeight.bold'),
             padding: '15px 30px',
             borderRadius: '0',
-            backgroundColor: theme('colors.white'),
+
             color: theme('colors.black'),
-            outline: `1px solid ${theme('colors.black') }`,
+            outline: `1px solid ${theme('colors.black')}`,
+            textTransform: 'uppercase',
+
             '&:hover': {
               cursor: 'pointer',
               color: theme('colors.white'),
               backgroundColor: theme('colors.black'),
+            }
+          },
+          '.btn-3': {
+            position: 'relative',
+            fontSize: '13px',
+            fontWeight: theme('fontWeight.bold'),
+            borderRadius: '0',
+            color: theme('colors.black50'),
+            textTransform: 'uppercase',
+
+            '&:hover': {
+              cursor: 'pointer',
+              color: theme('colors.primary'),
             }
           },
           '.icon-btn': {
