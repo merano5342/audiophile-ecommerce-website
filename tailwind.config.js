@@ -6,6 +6,7 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   content: ['./src/**/*.{ts,tsx}'],
+  darkMode: "class",
   theme: {
     fontSize: {
       sm: '1rem',     // 小螢幕字體大小

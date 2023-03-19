@@ -5,10 +5,10 @@ const Article = () => {
     <div className="grid justify-center gap-8 lg:grid-cols-2">
       <img src={imgBestGear} alt="" className="rounded-lg" />
       <div className="mx-auto mt-10 max-w-[445px] lg:order-first lg:m-0 lg:my-auto">
-        <h2 className="mb-8 tracking-[1px] sm:text-md lg:text-left">
+        <h2 className="mb-8 tracking-[1px] dark:text-white sm:text-md lg:text-left">
           Bringing you the <span className="text-primary">best</span> audio gear
         </h2>
-        <p className="tracking-[1px] text-black50 lg:text-left">
+        <p className="tracking-[1px] text-black50 dark:text-white50 lg:text-left">
           Located at the heart of New York City, Audiophile is the premier store for high
           end headphones, earphones, speakers, and audio accessories. We have a large
           showroom and luxury demonstration rooms available for you to browse and

@@ -4,7 +4,7 @@ import speakers from '../assets/shared/desktop/image-category-thumbnail-speakers
 
 const Products = () => {
   return (
-    <div className="flex flex-col gap-3 bg-white md:flex-row  ">
+    <div className="flex flex-col gap-3 md:flex-row  ">
       <div className="product">
         <img src={Headphones} alt="" className="image-category" />
         <div className="product-gray">
